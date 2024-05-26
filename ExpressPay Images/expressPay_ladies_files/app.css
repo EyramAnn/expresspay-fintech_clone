@@ -1,0 +1,663 @@
+@import url('https://use.fontawesome.com/releases/v5.6.3/css/all.css');
+
+.tabsContainer a {
+  width: 50%;
+  border-bottom: solid 1px #d9dfea !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-top: none !important;
+  color: #aab0be !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  text-align: center !important;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.tabsContainer a.active {
+  border-bottom: solid 3px #0577de !important;
+  color: #364753 !important;
+}
+
+.tab-pane {
+  padding: 50px 40px 50px 40px;
+}
+
+.tab-pane input {
+  border-top-right-radius: 100px !important;
+}
+
+/**
+* ----------------------------------------------
+* Demo styles
+* ----------------------------------------------
+**/
+.u-position-absolute {
+  position: absolute;
+}
+
+.u-position-relative {
+  position: relative;
+}
+
+.accordion__item+.accordion__item {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.accordion__item--has-icon {
+  position: relative;
+}
+
+.accordion__title {
+  background-color: #ffffff;
+  outline: none !important;
+  color: #364753;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+}
+
+.accordion__title:hover {
+  background-color: #fefefe;
+}
+
+.accordion__body {
+  padding: 20px;
+  display: block;
+  animation: fadein 0.35s ease-in;
+}
+
+.accordion__body--hidden {
+  display: none;
+  opacity: 0;
+  animation: fadein 0.35s ease-in;
+}
+
+.accordion__title>*:last-child,
+.accordion__body>*:last-child {
+  margin-bottom: 0;
+}
+
+.accordion__arrow {
+  display: inline-block;
+  position: relative;
+  width: 24px;
+  height: 12px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -6px;
+}
+
+.accordion__arrow::after,
+.accordion__arrow::before {
+  display: block;
+  position: absolute;
+  top: 50%;
+  width: 10px;
+  height: 2px;
+  background-color: currentColor;
+  content: '';
+}
+
+.accordion__arrow::before {
+  left: 4px;
+  transform: rotate(45deg);
+}
+
+[aria-expanded='true'] .accordion__arrow::before,
+[aria-selected='true'] .accordion__arrow::before {
+  transform: rotate(-45deg);
+}
+
+.accordion__arrow::after {
+  right: 4px;
+  transform: rotate(-45deg);
+}
+
+[aria-expanded='true'] .accordion__arrow::after,
+[aria-selected='true'] .accordion__arrow::after {
+  transform: rotate(45deg);
+}
+
+.accordion__arrow::before,
+.accordion__arrow::after {
+  transition: transform 0.25s ease, -webkit-transform 0.25s ease;
+}
+
+/* -------------------------------------------------- */
+/* ---------------- Animation part ------------------ */
+/* -------------------------------------------------- */
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes move-down {
+  0% {
+    transform: translateY(0);
+  }
+
+  10% {
+    transform: translateY(0);
+  }
+
+  20% {
+    transform: translateY(5px);
+  }
+
+  30% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes move-up {
+  0% {
+    transform: translateY(0);
+  }
+
+  10% {
+    transform: translateY(0);
+  }
+
+  20% {
+    transform: translateY(-5px);
+  }
+
+  30% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.accordion__title--animated:hover .accordion__arrow {
+  animation-name: move-down;
+  animation-duration: 1.5s;
+}
+
+.accordion__title--animated[aria-expanded='true']:hover .accordion__arrow {
+  animation-name: move-up;
+  animation-duration: 1.5s;
+}
+
+.upload-area {
+  border: dashed 1px #0577de;
+  padding: 20px;
+  text-align: center;
+  outline: none;
+}
+
+.upload-sub-area {
+  background: #f2f7fa;
+  border-radius: 4px;
+  padding: 60px;
+  cursor: pointer;
+  outline: none;
+}
+
+.upload-sub-area p {
+  margin: 0 !important;
+  font-size: 14px;
+  color: #364753;
+}
+
+.upload-sub-area p span {
+  color: #0577de;
+}
+
+.accordion__item [aria-selected='true'] {
+  background: #f2f7fa !important;
+  border: solid 1px #0577de;
+}
+
+.accordion__body:not(.accordion__body--hidden) {
+  border-left: solid 1px #0577de;
+  border-right: solid 1px #0577de;
+  border-bottom: solid 1px #0577de;
+}
+
+.accordion__item:first-child .accordion__title {
+  border-top-left-radius: 4px !important;
+  border-top-right-radius: 4px !important;
+}
+
+.accordion__item:last-child [aria-selected='false'].accordion__title {
+  border-bottom-left-radius: 4px !important;
+  border-bottom-right-radius: 4px !important;
+}
+
+.error-flash {
+  background: #ff9696 !important;
+  transition: 1s ease-in !important;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/*
+*/
+
+#outbox {
+  display: block;
+  position: relative;
+}
+
+#outbox:before {
+  content: '\200B';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.overlay-bg {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 4px;
+  height: 100%;
+  width: 100%;
+
+  top: 0;
+  left: 0;
+  position: absolute;
+  padding: 0;
+  transition: opacity 0.5s;
+
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.hidden {
+  display: none !important;
+}
+
+#uploadImg {
+  margin: 0 !important;
+}
+
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+#loader p {
+  color: #ffffff !important;
+}
+
+/**/
+.react-phone-number-input__row {
+  /* This is done to stretch the contents of this component */
+  display: flex;
+  align-items: center;
+}
+
+.react-phone-number-input__phone {
+  /* The phone number input stretches to fill all empty space */
+  flex: 1;
+
+  /* The phone number input should shrink
+	   to make room for the extension input */
+  min-width: 0;
+}
+
+.react-phone-number-input__icon {
+  /* The flag icon size is 4x3 hence the exact `width` and `height` values */
+  width: 1.24em;
+  height: 0.93em;
+
+  /* `1px` is still too much for a "retina" screen but there's no way in CSS to specify "hairline" border width. */
+  border: 1px solid rgba(0, 0, 0, 0.5);
+
+  /* Makes sure `width`x`height` is exactly `4x3` and `border` width is not included in it */
+  box-sizing: content-box;
+}
+
+.react-phone-number-input__icon--international {
+  /* The international icon size is square */
+  /* and also has no border hence the `2 * 1px` `width` and `height` compensation */
+  width: calc(0.93em + 2px);
+  height: calc(0.93em + 2px);
+
+  /* The international icon size is square hence the exact `padding` value */
+  /* for precise alignment with `4x3` sized country flags. */
+  padding-left: 0.155em;
+  padding-right: 0.155em;
+
+  border: none;
+}
+
+.react-phone-number-input__error {
+  margin-left: calc(1.24em + 2px + 0.3em + 0.35em + 0.5em);
+  margin-top: calc(0.3rem);
+  color: #d30f00;
+}
+
+.react-phone-number-input__icon-image {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* Removes `<input type="number"/>` up/down arrows in Webkit browsers. */
+.react-phone-number-input__ext-input::-webkit-inner-spin-button,
+.react-phone-number-input__ext-input::-webkit-outer-spin-button {
+  margin: 0 !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: textfield !important;
+}
+
+.react-phone-number-input__ext-input {
+  width: 3em;
+}
+
+.react-phone-number-input__ext {
+  white-space: nowrap;
+}
+
+.react-phone-number-input__ext,
+.react-phone-number-input__ext-input {
+  margin-left: 0.5em;
+}
+
+/* Styling native country `<select/>`. */
+
+.react-phone-number-input__country--native {
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  margin-right: 0.5em;
+}
+
+.react-phone-number-input__country-select {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  border: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.react-phone-number-input__country-select-arrow {
+  display: block;
+  content: '';
+  width: 0;
+  height: 0;
+  margin-bottom: 0.1em;
+  margin-top: 0.3em;
+  margin-left: 0.3em;
+  border-width: 0.35em 0.2em 0 0.2em;
+  border-style: solid;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  color: #b8bdc4;
+  opacity: 0.7;
+  transition: color 0.1s;
+}
+
+/* Something from stackoverflow. */
+.react-phone-number-input__country-select-divider {
+  font-size: 1px;
+  background: black;
+}
+
+.react-phone-number-input__country-select:focus+.react-phone-number-input__country-select-arrow,
+.react-phone-number-input__country.rrui__select--focus .rrui__select__arrow {
+  color: #03b2cb;
+}
+
+/* Styling phone number input */
+
+.react-phone-number-input__input {
+  height: calc(0.3rem * 6);
+  outline: none;
+  border-radius: 0;
+  padding: 0;
+  appearance: none;
+  border: none;
+
+  transition: border 0.1s;
+  font-size: inherit;
+}
+
+.react-phone-number-input__input:focus {
+  border-color: #03b2cb;
+}
+
+.react-phone-number-input__input--disabled {
+  cursor: default;
+}
+
+.react-phone-number-input__input--invalid,
+.react-phone-number-input__input--invalid:focus {
+  border-color: #eb2010;
+}
+
+/* Overrides Chrome autofill yellow background color */
+.react-phone-number-input__input:-webkit-autofill {
+  box-shadow: 0 0 0 1000px white inset;
+}
+
+/* A small fix for `react-responsive-ui` */
+.react-phone-number-input__country .rrui__select__button {
+  border-bottom: none;
+}
+
+.react-phone-number-input__row {
+  border: solid 1px #e1e5ee;
+  border-radius: 3px;
+  padding: 8px;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.02) !important;
+}
+
+.react-phone-number-input__row input {
+  border: none !important;
+}
+
+.react-phone-number-input__icon {
+  border: none !important;
+  height: auto !important;
+}
+
+.react-phone-number-input__row.disabled {
+  background-color: #f1f1f1;
+  border: solid 1px rgb(238, 238, 239);
+}
+
+.react-phone-number-input__row.disabled input {
+  background-color: #f1f1f1;
+}
+
+/**/
+
+.merchant_service_listings .slick-slide {
+  border: solid 5px #f1f3f7;
+}
+
+/* Make clicks pass-through */
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  background: #29d;
+
+  position: fixed;
+  z-index: 1031;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 2px;
+}
+
+/* Fancy blur effect */
+#nprogress .peg {
+  display: block;
+  position: absolute;
+  right: 0px;
+  width: 100px;
+  height: 100%;
+  box-shadow: 0 0 10px #29d, 0 0 5px #29d;
+  opacity: 1;
+
+  -webkit-transform: rotate(3deg) translate(0px, -4px);
+  -ms-transform: rotate(3deg) translate(0px, -4px);
+  transform: rotate(3deg) translate(0px, -4px);
+}
+
+/* Remove these to get rid of the spinner */
+#nprogress .spinner {
+  display: block;
+  position: fixed;
+  z-index: 1031;
+  top: 15px;
+  right: 15px;
+}
+
+#nprogress .spinner-icon {
+  width: 18px;
+  height: 18px;
+  box-sizing: border-box;
+
+  border: solid 2px transparent;
+  border-top-color: #29d;
+  border-left-color: #29d;
+  border-radius: 50%;
+
+  -webkit-animation: nprogress-spinner 400ms linear infinite;
+  animation: nprogress-spinner 400ms linear infinite;
+}
+
+.nprogress-custom-parent {
+  overflow: hidden;
+  position: relative;
+}
+
+.nprogress-custom-parent #nprogress .spinner,
+.nprogress-custom-parent #nprogress .bar {
+  position: absolute;
+}
+
+@-webkit-keyframes nprogress-spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes nprogress-spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.PhoneInputInput {
+  border-width: 0px;
+  width: 100%;
+  height: 45px;
+  padding: 0px 15px;
+  margin: 0px;
+  font-size: 15px;
+  background-color: transparent;
+  border: 1px solid #e1e5ee;
+  border-radius: 4px;
+  border-bottom-left-radius: 4;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 4px 10px 0 rgb(0 0 0 / 2%);
+}
+
+.PhoneInputInput:focus {
+  outline: none;
+}
+
+
+
+.cust_phone_input_class .PhoneInput {
+  border: 1px solid #e1e5ee;
+  margin-block: 16px;
+  border-radius: 4px;
+  padding: 5px 17px;
+}
+
+.cust_phone_input_class .PhoneInputCountry {
+  width: 33%;
+
+}
+
+@media only screen and (max-width: 450px) {
+  .cust_phone_input_class .PhoneInputCountry {
+    width: 45% !important;
+
+  }
+}
+
+.cust_phone_input_class .PhoneInputCountrySelectArrow {
+  display: none;
+}
+
+.cust_phone_input_class .PhoneInputCountryIcon.PhoneInputCountryIcon--border::after {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 5px;
+  background-image: url('/img/caret-down.png');
+  background-size: cover;
+  margin-left: 46px;
+  margin-top: -10px;
+}
+
+.cust_phone_input_class .PhoneInputCountryIcon.PhoneInputCountryIcon--border::before {
+  content: var(--code, "+333");
+  display: block;
+  height: 100%;
+  position: absolute;
+  right: 3px;
+  border-left: 1px solid #e1e5ee;
+  top: 0;
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+}
+
+.cust_phone_input_class .PhoneInputInput {
+  border: none;
+}
+
+.cust_phone_input_class .PhoneInputInput::placeholder {
+  color: #aab0be;
+}
+
+.sticky-nav {
+  box-shadow: 0 4px 20px rgb(0 0 0 / 6%);
+}
